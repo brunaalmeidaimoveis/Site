@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruna Barreto - Documentalista Imobiliária</title>
+    <style>
+        /* Reset e estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            color: #043c65;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            color: #043c65;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #043c65, #043c65);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.3);
+        }
+        
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+        }
+        
+        .btn-whatsapp:hover {
+            background: linear-gradient(135deg, #128C7E, #25D366);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        /* Header e Navegação */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 20px rgba(44, 62, 80, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            
+           
+            left: 0;
+            gap: 15px;
+        }
+        
+        .logo-img {
+            height: 70px;
+            width: auto;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0 auto;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #3498db;
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(52, 73, 94, 0.9)), url('fundo.png');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            padding-top: 70px; /* altura do header */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .hero .subtitle {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .hero .tagline {
+            font-size: 20px;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Sobre */
+        .sobre {
+            background-color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .sobre-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .sobre-text {
+            flex: 1;
+        }
+        
+        .sobre-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(44, 62, 80, 0.1);
+        }
+        
+        .sobre-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .destaque {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        
+        /* Serviços */
+        .servicos {
+            background-color: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .servico-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 20px rgba(44, 62, 80, 0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid #ecf0f1;
+        }
+        
+        .servico-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(44, 62, 80, 0.15);
+        }
+        
+        .servico-icon {
+            font-size: 50px;
+            margin-bottom: 25px;
+        }
+        
+        .servico-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        /* Formulário */
+        .contato {
+            background-color: white;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(44, 62, 80, 0.1);
+            border: 1px solid #ecf0f1;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ecf0f1;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Loading */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+            margin: 0 auto 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Contatos */
+        .contatos {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            text-align: center;
+        }
+        
+        .contatos .section-title h2 {
+            color: white;
+        }
+        
+        .contatos .section-title h2::after {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+        
+        .contatos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .contato-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 40px 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .contato-card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .contato-icon {
+            font-size: 50px;
+            margin-bottom: 25px;
+        }
+        
+        .contato-card h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .footer-logo-img {
+            height: 40px;
+            width: auto;
+        }
+        
+        .footer-logo-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        
+        .footer-logo .logo-name {
+            color: white;
+            font-size: 18px;
+        }
+        
+        .footer-logo .logo-title {
+            color: #bdc3c7;
+            font-size: 12px;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 15px;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #3498db;
+        }
+        
+        .copyright {
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+
+    /* RESPONSIVO MOBILE */
+
+@media (max-width: 768px) {
+    .nav-links li:last-child {
+        width: 100%;
+        text-align: right;
+    }
+}
+
+
+
+   
+    
+
+
+
+        
+    </style>
+</head>
+<body>
+
+
+    
+    <!-- Header e Navegação -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                
+                <div class="logo">
+                    <img src="logo-bruna-barreto.png" alt="Bruna Barreto Documentalista Imobiliária" class="logo-img">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bruna Almeida</h1>
+                <div class="subtitle">DOCUMENTALISTA IMOBILIÁRIA</div>
+                <div class="tagline">Garantindo a segurança do seu negócio!</div>
+                <div class="hero-buttons">
+                    <a href="#contato" class="btn">Solicitar Orçamento</a>
+                    <a href="https://wa.me/5571992245874?text=Olá%20Bruna,%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços%20de%20documentalista%20imobiliária" class="btn btn-whatsapp" target="_blank">Falar no WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre Meu Trabalho</h2>
+            </div>
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <p>Como <span class="destaque">Documentalista Imobiliária</span>, minha missão é garantir que todos os aspectos documentais do seu negócio imobiliário estejam em completa conformidade com a legislação.</p>
+                    <p>Atuo com expertise na regularização de imóveis, análise documental e emissão de certidões, proporcionando <span class="destaque">segurança jurídica</span> e <span class="destaque">tranquilidade</span> para você e seus clientes.</p>
+                    <p>Com atenção aos detalhes e conhecimento técnico, asseguro que toda documentação necessária para compra, venda, locação ou regularização de imóveis esteja precisa e atualizada.</p>
+                    <a href="#contato" class="btn">Consultoria Gratuita</a>
+                </div>
+                <div class="sobre-image">
+                    <img src="imagem.jpeg" alt="Documentos e processos imobiliários">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="servicos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meus Serviços</h2>
+            </div>
+            <div class="servicos-grid">
+                <div class="servico-card">
+                    <div class="servico-icon">📄</div>
+                    <h3>Análise Documental Completa</h3>
+                    <p>Verificação minuciosa de toda documentação imobiliária para identificar pendências e irregularidades.</p>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">🏛️</div>
+                    <h3>Emissão de Certidões</h3>
+                    <p>Certidões de ônus reais, matrícula, ações judiciais e demais documentos necessários.</p>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">✍️</div>
+                    <h3>Regularização de Imóveis</h3>
+                    <p>Regularização de imóveis junto aos cartórios e órgãos competentes.</p>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">🔍</div>
+                    <h3>Due Diligence Imobiliária</h3>
+                    <p>Pesquisa completa da situação jurídica do imóvel para transações seguras.</p>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">📋</div>
+                    <h3>Elaboração de Contratos</h3>
+                    <p>Contratos de compra e venda, permuta, doação e outros instrumentos particulares.</p>
+                </div>
+                <div class="servico-card">
+                    <div class="servico-icon">⚖️</div>
+                    <h3>Assessoria Jurídica</h3>
+                    <p>Orientação técnica sobre questões legais envolvendo documentação imobiliária.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de Contato -->
+    <section id="contato" class="contato">
+        <div class="container">
+            <div class="section-title">
+                <h2>Entre em Contato</h2>
+            </div>
+            <div class="form-container">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo </label>
+                        <input type="text" id="nome" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail </label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone/WhatsApp </label>
+                        <input type="tel" id="telefone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="servico">Serviço de Interesse </label>
+                        <select id="servico" class="form-control" required>
+                            <option value="">Selecione um serviço</option>
+                            <option value="Análise Documental">Consultoria e Assessoria Especializada</option>
+                            <option value="Emissão de Certidões">Regularização Técnica, Licenças e Alvarás</option>
+                            <option value="Regularização de Imóvel">Assessoria para Financiamentos</option>
+                            <option value="Due Diligence">Elaboração de Documentos e Contratos</option>
+                            <option value="Elaboração de Contratos">Certidões e Consultas</option>
+                            <option value="Assessoria Jurídica">Baixa de Hipoteca e Gravames</option>
+                            <option value="Assessoria Jurídica">Usucapião Extrajudicial</option>
+                            <option value="Assessoria Jurídica">Averbações e Registros</option>
+                            <option value="Assessoria Jurídica">Regularização Imobiliária Completa</option>
+
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" class="form-control" placeholder="Informe os detalhes do serviço desejado."></textarea>
+                    </div>
+                    
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                        <p>Enviando sua mensagem...</p>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%;" id="submitBtn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<!-- Contatos -->
+<section class="contatos">
+    <div class="container">
+        <div class="section-title">
+            <h2>Fale Comigo</h2>
+        </div>
+        <div class="contatos-grid">
+            <div class="contato-card">
+                <div class="contato-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/126/126341.png" alt="Telefone" style="width: 24px !important; height: 24px !important; max-width: 24px !important; max-height: 24px !important;">
+                </div>
+                <h3>Telefone</h3>
+                <p>(71) 99224-5874</p>
+                <p>Segunda a Sexta: 8h às 18h</p>
+            </div>
+            <div class="contato-card">
+                <div class="contato-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="E-mail" style="width: 24px !important; height: 24px !important; max-width: 24px !important; max-height: 24px !important;">
+                </div>
+                <h3>E-mail</h3>
+                <p>brunnaalmeida.imoveis@gmail.com</p>
+                <p>Respondo em até 24h</p>
+            </div>
+            <div class="contato-card">
+                <div class="contato-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png" alt="WhatsApp" style="width: 24px !important; height: 24px !important; max-width: 24px !important; max-height: 24px !important;">
+                </div>
+                <h3>WhatsApp</h3>
+                <p>(71) 99224-5874</p>
+                <a href="https://wa.me/5571992245874?text=Olá%20Bruna,%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços%20de%20documentalista%20imobiliária" class="btn btn-whatsapp" target="_blank" style="margin-top: 15px;">Enviar Mensagem</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo-bruna-barreto.png" alt="Bruna Barreto Documentalista Imobiliária" class="footer-logo-img">
+                    <div class="footer-logo-text">
+                        <div class="logo-name">Bruna Almeida</div>
+                        <div class="logo-title">DOCUMENTALISTA IMOBILIÁRIA</div>
+                    </div>
+                </div>
+                <p>Garantindo a segurança do seu negócio!</p>
+                
+                <p class="copyright">&copy; 2025 Bruna Barreto - Documentalista Imobiliária. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+
+<script>
+    // ================================
+    // CONFIGURAÇÃO DO BACKEND
+    // ================================
+    const BACKEND_URL = "http://127.0.0.1:5000/api/excel/salvar";
+    const TEST_URL = "http://127.0.0.1:5000/teste";
+
+    // Elementos do DOM
+    const contactForm = document.getElementById('contactForm');
+    const loadingElement = document.getElementById('loading');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // Testar conexão ao carregar a página
+    window.addEventListener('DOMContentLoaded', async () => {
+        console.log('Testando conexão com backend...');
+        try {
+            const response = await fetch(TEST_URL, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                const data = await response.json();
+                console.log('✅ Backend conectado:', data.mensagem);
+            } else {
+                console.warn('⚠️ Backend retornou erro:', response.status);
+            }
+        } catch (error) {
+            console.error('❌ Não foi possível conectar ao backend:', error.message);
+            console.log('Verifique se o servidor Flask está rodando na porta 5000');
+        }
+    });
+
+    // Envio do formulário
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        if (!validarFormulario()) {
+            return;
+        }
+
+        const formData = {
+            "Nome Completo": document.getElementById('nome').value.trim(),
+            "Email": document.getElementById('email').value.trim(),
+            "Telefone": document.getElementById('telefone').value.trim(),
+            "Servico de Interesse": document.getElementById('servico').value,
+            "Mensagem": document.getElementById('mensagem').value.trim()
+        };
+
+        console.log('Enviando dados:', formData);
+        await enviarFormulario(formData);
+    });
+
+    // ================================
+    // ENVIO PARA O BACKEND
+    // ================================
+    async function enviarFormulario(formData) {
+        try {
+            mostrarLoading(true);
+
+            const response = await fetch(BACKEND_URL, {
+                method: "POST",
+                headers: { 
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
+
+            console.log('Resposta do servidor:', response.status, response.statusText);
+
+            const data = await response.json();
+            console.log('Dados retornados:', data);
+
+            if (response.ok) {
+                mostrarMensagemSucesso("✅ " + data.mensagem);
+                contactForm.reset();
+            } else {
+                const erroMsg = data.erro || `Erro ${response.status}: ${response.statusText}`;
+                mostrarMensagemErro("❌ " + erroMsg);
+            }
+
+        } catch (error) {
+            console.error("Erro na requisição:", error);
+            mostrarMensagemErro("❌ Erro de conexão com o servidor. Verifique o console (F12) para detalhes.");
+        } finally {
+            mostrarLoading(false);
+        }
+    }
+
+    // ================================
+    // VALIDAÇÃO DO FORMULÁRIO
+    // ================================
+    function validarFormulario() {
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const telefone = document.getElementById('telefone').value.trim();
+        const servico = document.getElementById('servico').value;
+
+        if (!nome) {
+            alert('❌ Por favor, preencha seu nome completo.');
+            return false;
+        }
+
+        if (!email) {
+            alert('❌ Por favor, preencha seu email.');
+            return false;
+        }
+
+        if (!validarEmail(email)) {
+            alert('❌ Por favor, insira um email válido.');
+            return false;
+        }
+
+        if (!telefone) {
+            alert('❌ Por favor, preencha seu telefone.');
+            return false;
+        }
+
+        if (telefone.replace(/\D/g, '').length < 10) {
+            alert('❌ Por favor, insira um telefone válido com DDD.');
+            return false;
+        }
+
+        if (!servico) {
+            alert('❌ Por favor, selecione um serviço.');
+            return false;
+        }
+
+        return true;
+    }
+
+    function validarEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+
+    // ================================
+    // UI HELPERS
+    // ================================
+    function mostrarLoading(mostrar) {
+        if (mostrar) {
+            loadingElement.style.display = 'block';
+            submitBtn.style.display = 'none';
+            submitBtn.disabled = true;
+        } else {
+            loadingElement.style.display = 'none';
+            submitBtn.style.display = 'block';
+            submitBtn.disabled = false;
+        }
+    }
+
+    function mostrarMensagemSucesso(msg) {
+        // Usar modal ou alert mais amigável
+        alert(msg);
+    }
+
+    function mostrarMensagemErro(msg) {
+        alert(msg);
+    }
+
+    // Mascara telefone
+    document.getElementById('telefone').addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        
+        if (value.length <= 11) {
+            value = value.replace(/(\d{2})(\d)/, '($1) $2');
+            value = value.replace(/(\d{5})(\d)/, '$1-$2');
+        }
+        
+        e.target.value = value;
+    });
+
+    // Suavizar scroll dos links de navegação
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
