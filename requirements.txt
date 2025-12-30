@@ -1,3 +1,6 @@
-Flask
+flask
 pandas
 openpyxl
+google-api-python-client
+oauth2client
+gunicorn
